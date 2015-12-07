@@ -19,13 +19,13 @@ func run() {
 		}
 	}()
 
-	recordPanic("nohup.out")
+	recordPanic("setsid.out")
 
 	flag.Parse()
 	args := flag.Args()
 
 	if len(args) == 0 {
-		fmt.Println("usage: nohup utility [arguments]")
+		fmt.Println("usage: setsid utility [arguments]")
 		return
 	}
 
@@ -35,10 +35,10 @@ func run() {
 	}
 	err := cmd.Start()
 	if err != nil {
-		fmt.Printf("nohup: %s\n", err)
+		fmt.Printf("setsid: %s\n", err)
 	}
 
-	fmt.Printf("nohup: Command Success with PID %d\n", cmd.Process.Pid)
+	fmt.Printf("setsid: Command Success with PID %d\n", cmd.Process.Pid)
 	return
 }
 
