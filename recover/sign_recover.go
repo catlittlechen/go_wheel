@@ -11,6 +11,7 @@ import (
 var controlChan chan os.Signal
 var functionMap map[string][]func()
 var signalSlice []os.Signal
+var fp *os.File
 
 func init() {
 	controlChan = make(chan os.Signal, 1)
@@ -47,11 +48,25 @@ func run() {
 			fmt.Println("program stack: %s ", debug.Stack())
 		}
 	}()
+
+	recordPanic("panic")
+
 	signal.Notify(controlChan, signalSlice...)
 	fmt.Println("Start!")
+
 	for {
 		startRecover()
 	}
+}
+
+func recordPanic(filename string) (err error) {
+	fp, err = os.Create(filename)
+	if err != nil {
+		return
+	}
+	syscall.Dup2(int(fp.Fd()), 1)
+	syscall.Dup2(int(fp.Fd()), 2)
+	return
 }
 
 func recoverfunction() {
