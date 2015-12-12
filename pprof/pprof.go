@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"runtime"
 	"runtime/pprof"
 	"runtime/trace"
 	"strings"
@@ -38,6 +39,7 @@ func work(action string) {
 	case "stop_cpuprofile":
 		pprof.StopCPUProfile()
 	case "write_heap":
+		runtime.GC()
 		pprof.WriteHeapProfile(proFile)
 	case "lookup_goroutine":
 		profile := pprof.Lookup("goroutine")
