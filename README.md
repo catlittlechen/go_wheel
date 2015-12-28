@@ -13,3 +13,7 @@ Go 自用库
 进度条
 ### [iopstat](./iopstat/iopstat.go)
 输出进程的io读写情况
+### [interface](./interface/interface.go)
+简单的类型转化
+### [password](./password/password.go)
+密码生成器
