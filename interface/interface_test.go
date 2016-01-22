@@ -22,7 +22,7 @@ var (
 )
 
 type userEx struct {
-	Id       int    `json:"id"`
+	ID       int    `json:"id"`
 	Username string `json:"username"`
 	Platform int    `json:"platform"`
 	Type     int    `json:"type"`
