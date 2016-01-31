@@ -19,3 +19,5 @@ Go 自用库
 密码生成器
 ### [unicode](./unicode/unicode.go)
 获取Unicod编码的字符串长度方法，示例。
+### [autodo](./autodo/autodo.go)
+简单的监控文件，在修改时执行命令
