@@ -21,3 +21,5 @@ Go 自用库
 获取Unicod编码的字符串长度方法，示例。
 ### [autodo](./autodo/autodo.go)
 简单的监控文件，在修改时执行命令
+### [singleton](./singleton/singleton.go)
+Go的单例实现
