@@ -23,3 +23,5 @@ Go 自用库
 简单的监控文件，在修改时执行命令
 ### [singleton](./singleton/singleton.go)
 Go的单例实现
+### [channel](./channel/queue.go)
+Go的无限channel实现
